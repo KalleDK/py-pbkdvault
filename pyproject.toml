@@ -15,4 +15,4 @@ good-names = ["fp"]
 output = "coverage.xml"
 
 [tool.coverage.report]
-exclude_lines = ["coverage: ignore linux"]
+exclude_lines = ["coverage: linux ignore", "coverage: ignore"]

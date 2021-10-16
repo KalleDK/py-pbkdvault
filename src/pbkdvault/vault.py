@@ -19,7 +19,7 @@ VaultEntry = dict[str, Any]
 VaultEntries = dict[EntryID, VaultEntry]
 
 
-class VaultBackend(Protocol):
+class VaultBackend(Protocol): # coverage: ignore
     """Protocol to descripte what a VaultBackend should implement
     """
     def load(self) -> VaultEntries:
