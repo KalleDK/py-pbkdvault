@@ -1,5 +1,7 @@
 import pytest
-from pbkdvault.cipher import CBCCipher, GCMCipher, Cipher
+from pbkdvault.cipher import Cipher
+from pbkdvault.cipher_gcm import GCMCipher
+from pbkdvault.cipher_cbc import CBCCipher
 
 
 messages = [

@@ -13,7 +13,8 @@ class GCMCipher:
     Implementation of GCM as a pbkdvault.Cipher
     """
 
-    def decrypt(self, key: bytes, packet: dict[str, str]) -> bytes:
+    @staticmethod
+    def decrypt(key: bytes, packet: dict[str, str]) -> bytes:
         """Decrypt packet with key
 
         Args:
@@ -28,7 +29,8 @@ class GCMCipher:
         msg = cipher.decrypt_and_verify(raw_packet['ciphertext'], raw_packet['tag'])
         return msg
 
-    def encrypt(self, key: bytes, msg: bytes) -> dict[str, str]:
+    @staticmethod
+    def encrypt(key: bytes, msg: bytes) -> dict[str, str]:
         """Encrypt data with key
 
         Args:

@@ -46,5 +46,8 @@ def load(path: pathlib.Path, key_size: int = DEFAULT_MASTER_KEY_SIZE) -> bytes:
 
     key = b64.decode(b64_key)
     if len(key) != key_size:
-        raise Exception("invalid key length")
+        raise ValueError("invalid key length")
     return key
+
+
+__all__ = ['load', 'create']

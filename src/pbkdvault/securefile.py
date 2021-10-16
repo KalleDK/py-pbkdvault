@@ -10,7 +10,7 @@ def _mask(perm: int):
     return (stat.S_IRWXU | stat.S_IRWXG | stat.S_IRWXO) & (~perm)
 
 
-if sys.platform != "win32":
+if sys.platform != "win32": # coverage: ignore windows
     def sopen(path: pathlib.Path, mode: str, buffering=-1, encoding=None, # pylint: disable=too-many-arguments
               errors=None, newline=None, permissions: int = URW_G_O):
         """Open path securely using file permissions but without locking
@@ -42,7 +42,7 @@ if sys.platform != "win32":
         return path.open(mode=mode, buffering=buffering,
                          encoding=encoding, errors=errors, newline=newline)
 
-else:
+else: # coverage: ignore linux
     def sopen(path: pathlib.Path, mode: str, buffering=-1, encoding=None, # pylint: disable=too-many-arguments
               errors=None, newline=None, permissions=URW_G_O):
         """Open path securely using file permissions but without locking.

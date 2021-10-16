@@ -3,10 +3,16 @@ requires = ["setuptools>=42.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.pytest.ini_options]
-addopts = "--cov=pbkdvault --cov-report=xml:coverage.xml --cov-report=term"
+addopts = "--cov=pbkdvault --cov-report=xml --cov-report=term --cov-config pyproject.toml"
 testpaths = [
     "tests",
 ]
 
 [tool.pylint.basic]
 good-names = ["fp"]
+
+[tool.coverage.xml]
+output = "coverage.xml"
+
+[tool.coverage.report]
+exclude_lines = ["coverage: ignore linux"]
