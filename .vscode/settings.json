@@ -3,13 +3,6 @@
     "coverage-gutters.xmlname": "coverage.xml",
     "python.languageServer": "Pylance",
     "python.linting.enabled": true,
-    "python.testing.pytestArgs": [
-        "tests",
-        "--cov-report",
-        "xml:coverage.xml",
-        "--cov",
-        "pbkdvault"
-    ],
     "python.linting.pylintEnabled": true,
     "python.testing.pytestEnabled": true,
     "python.testing.unittestEnabled": false,
